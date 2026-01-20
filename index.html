@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Chèrie | Boutique & Creche Pet</title>
 
-<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#f7b7c8">
 
-<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -84,8 +82,11 @@ main{
 }
 
 .btn{
-  display:block;
-  background:linear-gradient(135deg,var(--primary),#ffd5e1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:#25D366;
   color:#0f172a;
   text-align:center;
   padding:14px;
@@ -95,10 +96,9 @@ main{
   margin-top:14px;
 }
 
-.btn.alt{
-  background:transparent;
-  border:1px solid var(--primary);
-  color:var(--primary);
+.btn.instagram{
+  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+  color:white;
 }
 
 section{display:none}
@@ -125,7 +125,7 @@ section.active{display:block}
 
 iframe{
   width:100%;
-  height:260px;
+  height:220px;
   border:0;
   border-radius:18px;
   margin-top:12px;
@@ -146,6 +146,8 @@ iframe{
 
 <!-- INÍCIO -->
 <section id="home" class="active">
+
+  <!-- SOBRE -->
   <div class="card">
     <h2>🐾 Sobre a Mon Chèrie</h2>
     <p>
@@ -154,22 +156,35 @@ iframe{
     </p>
   </div>
 
+  <!-- INSTAGRAM -->
   <div class="card">
     <h2>📸 Instagram</h2>
-    <a class="btn alt" href="https://instagram.com/mon.cherieboutique" target="_blank">
+    <p>Siga nosso dia a dia, novidades e cuidados especiais.</p>
+
+    <a class="btn instagram"
+       href="https://www.instagram.com/mon.cherieboutique/"
+       target="_blank">
       @mon.cherieboutique
     </a>
   </div>
 
+  <!-- LOCALIZAÇÃO -->
   <div class="card">
-    <h2>📅 Agendamento Online</h2>
-    <p>
-      Agende de forma prática. O pedido vai direto para nossa agenda e planilha.
-    </p>
-    <a class="btn" href="https://forms.gle/SEU_LINK_DO_FORMULARIO" target="_blank">
-      Agendar Online
+    <h2>📍 Onde Estamos</h2>
+    <p>Rua Solidônio, 820</p>
+
+    <iframe
+      src="https://www.google.com/maps?q=Rua%20Solid%C3%B4nio%20820&output=embed"
+      loading="lazy">
+    </iframe>
+
+    <a class="btn"
+       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20localização%20da%20Mon%20Chèrie."
+       target="_blank">
+      WhatsApp
     </a>
   </div>
+
 </section>
 
 <!-- SERVIÇOS -->
@@ -178,44 +193,39 @@ iframe{
   <div class="card">
     <h2>🛁 Banho & Tosa Premium</h2>
     <p>Higiene, estética e conforto com produtos de alto padrão.</p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20e%20Tosa%20Premium%20para%20meu%20pet.%20Poderia%20me%20informar%20os%20horários?">
-      Agendar no WhatsApp
+    <a class="btn"
+       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20e%20Tosa%20Premium%20para%20meu%20pet."
+       target="_blank">
+      WhatsApp
     </a>
   </div>
 
   <div class="card">
     <h2>🏡 Creche Pet</h2>
-    <p>Socialização, recreação monitorada e muito carinho durante o dia.</p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Tenho%20interesse%20na%20Creche%20Pet%20da%20Mon%20Chèrie.%20Gostaria%20de%20informações.">
-      Agendar no WhatsApp
+    <p>
+      Socialização, recreação monitorada e muito carinho durante o dia
+      em um ambiente seguro.
+    </p>
+    <a class="btn"
+       href="https://wa.me/5511992301973?text=Olá!%20Tenho%20interesse%20na%20Creche%20Pet%20da%20Mon%20Chèrie."
+       target="_blank">
+      WhatsApp
     </a>
   </div>
 
   <div class="card">
-    <h2>🛏️ Hotel Pet</h2>
-    <p>Hospedagem confortável e rotina personalizada.</p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20Hotel%20Pet%20da%20Mon%20Chèrie.%20Datas%20e%20valores.">
-      Agendar no WhatsApp
+    <h2>🚕 Taxi Dog</h2>
+    <p>
+      Transporte seguro e confortável.<br>
+      <strong>10 km: R$ 60,00 | 20 km: R$ 110,00</strong>
+    </p>
+    <a class="btn"
+       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20solicitar%20o%20Taxi%20Dog%20da%20Mon%20Chèrie.%20Valores:%2010km%20R$60,00%20e%2020km%20R$110,00."
+       target="_blank">
+      WhatsApp
     </a>
   </div>
 
-</section>
-
-<!-- LOCALIZAÇÃO -->
-<section id="contato">
-  <div class="card">
-    <h2>📍 Nossa Localização</h2>
-    <p>Rua Solidônio, 820</p>
-
-    <iframe
-      src="https://www.google.com/maps?q=Rua%20Solid%C3%B4nio%20820&output=embed"
-      loading="lazy">
-    </iframe>
-
-    <a class="btn" href="https://wa.me/5511992301973">
-      WhatsApp: (11) 99230-1973
-    </a>
-  </div>
 </section>
 
 </main>
@@ -223,7 +233,6 @@ iframe{
 <nav class="menu">
   <button class="active" onclick="mostrar('home',this)">Início</button>
   <button onclick="mostrar('servicos',this)">Serviços</button>
-  <button onclick="mostrar('contato',this)">Localização</button>
 </nav>
 
 </div>
@@ -236,7 +245,6 @@ function mostrar(id,btn){
   btn.classList.add('active');
 }
 
-// SERVICE WORKER
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
@@ -244,6 +252,5 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
-
 
 
