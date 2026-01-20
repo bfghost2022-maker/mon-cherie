@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Chèrie | Pet App</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1a2b">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0c1a2b;
+  --card:#122640;
+  --primary:#e8a6a6;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:var(--bg);color:#fff}
+.app{max-width:420px;margin:auto;min-height:100vh;display:flex;flex-direction:column}
+header{text-align:center;padding:25px}
+header h1{color:var(--primary)}
+header p{font-size:.9rem;opacity:.9}
+main{flex:1;padding:20px}
+.card{background:var(--card);padding:20px;border-radius:18px;margin-bottom:15px}
+.card h2{color:var(--primary)}
+.card p{font-size:.9rem;opacity:.9;margin-top:5px}
+.btn{display:block;background:var(--primary);color:#0c1a2b;
+text-align:center;padding:14px;border-radius:30px;
+text-decoration:none;font-weight:600;margin-top:15px}
+.menu{display:flex;justify-content:space-around;background:#081221;padding:10px}
+.menu button{background:none;border:none;color:#fff;font-size:.75rem}
+.menu button.active{color:var(--primary)}
+section{display:none}
+section.active{display:block}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header>
+  <h1>Mon Chèrie</h1>
+  <p>Boutique • Creche • Banho & Tosa</p>
+</header>
+
+<main>
+<section id="home" class="active">
+  <div class="card">
+    <h2>Bem-vindo 🐾</h2>
+    <p>Cuidado, amor e sofisticação para o seu pet.</p>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="card">
+    <h2>Banho & Tosa</h2>
+    <a class="btn" href="https://wa.me/5511992301973">Agendar</a>
+  </div>
+  <div class="card">
+    <h2>Creche Pet</h2>
+    <p>Socialização e diversão o dia todo.</p>
+  </div>
+  <div class="card">
+    <h2>Hotel Pet</h2>
+    <p>Hospedagem confortável e segura.</p>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="card">
+    <h2>Contato</h2>
+    <a class="btn" href="https://wa.me/5511992301973">WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<nav class="menu">
+  <button class="active" onclick="show('home',this)">Home</button>
+  <button onclick="show('servicos',this)">Serviços</button>
+  <button onclick="show('contato',this)">Contato</button>
+</nav>
+
+</div>
+
+<script>
+function show(id,btn){
+ document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+}
+
+if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
