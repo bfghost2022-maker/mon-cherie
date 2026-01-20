@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Chèrie | Boutique & Creche Pet</title>
 
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f7b7c8">
+
+<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -37,7 +42,7 @@ body{
 }
 
 header{
-  padding:30px 20px;
+  padding:28px 20px;
   text-align:center;
 }
 
@@ -144,16 +149,25 @@ iframe{
   <div class="card">
     <h2>🐾 Sobre a Mon Chèrie</h2>
     <p>
-      Uma boutique pet criada para oferecer excelência, carinho e bem-estar.
-      Cada pet recebe atenção individual em um ambiente seguro e acolhedor.
+      Boutique pet especializada em bem-estar, estética e hospedagem.
+      Cada pet recebe cuidado individual, carinho e segurança.
     </p>
   </div>
 
   <div class="card">
     <h2>📸 Instagram</h2>
-    <p>Acompanhe nossa rotina e novidades.</p>
     <a class="btn alt" href="https://instagram.com/mon.cherieboutique" target="_blank">
       @mon.cherieboutique
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>📅 Agendamento Online</h2>
+    <p>
+      Agende de forma prática. O pedido vai direto para nossa agenda e planilha.
+    </p>
+    <a class="btn" href="https://forms.gle/SEU_LINK_DO_FORMULARIO" target="_blank">
+      Agendar Online
     </a>
   </div>
 </section>
@@ -163,40 +177,31 @@ iframe{
 
   <div class="card">
     <h2>🛁 Banho & Tosa Premium</h2>
-    <p>
-      Higiene, estética e conforto com produtos de alta qualidade e profissionais
-      especializados.
-    </p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20e%20Tosa%20Premium%20para%20meu%20pet.%20Poderia%20me%20informar%20os%20horários%20disponíveis?">
+    <p>Higiene, estética e conforto com produtos de alto padrão.</p>
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20e%20Tosa%20Premium%20para%20meu%20pet.%20Poderia%20me%20informar%20os%20horários?">
       Agendar no WhatsApp
     </a>
   </div>
 
   <div class="card">
     <h2>🏡 Creche Pet</h2>
-    <p>
-      Socialização, recreação monitorada e muito carinho durante o dia,
-      garantindo bem-estar e diversão.
-    </p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Tenho%20interesse%20na%20Creche%20Pet%20da%20Mon%20Chèrie.%20Gostaria%20de%20saber%20como%20funciona%20e%20valores.">
+    <p>Socialização, recreação monitorada e muito carinho durante o dia.</p>
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Tenho%20interesse%20na%20Creche%20Pet%20da%20Mon%20Chèrie.%20Gostaria%20de%20informações.">
       Agendar no WhatsApp
     </a>
   </div>
 
   <div class="card">
     <h2>🛏️ Hotel Pet</h2>
-    <p>
-      Hospedagem confortável com rotina personalizada para que seu pet
-      se sinta em casa.
-    </p>
-    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20Hotel%20Pet%20da%20Mon%20Chèrie.%20Datas%20disponíveis%20e%20valores,%20por%20favor.">
+    <p>Hospedagem confortável e rotina personalizada.</p>
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20Hotel%20Pet%20da%20Mon%20Chèrie.%20Datas%20e%20valores.">
       Agendar no WhatsApp
     </a>
   </div>
 
 </section>
 
-<!-- CONTATO -->
+<!-- LOCALIZAÇÃO -->
 <section id="contato">
   <div class="card">
     <h2>📍 Nossa Localização</h2>
@@ -229,6 +234,11 @@ function mostrar(id,btn){
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+}
+
+// SERVICE WORKER
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 
