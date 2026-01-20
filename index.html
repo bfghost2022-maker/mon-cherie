@@ -3,98 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Chèrie | Pet App</title>
-
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0c1a2b">
+<title>Mon Chèrie | Boutique & Creche Pet</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0c1a2b;
-  --card:#122640;
-  --primary:#e8a6a6;
+  --bg:#0f172a;
+  --card:#1e293b;
+  --primary:#f7b7c8;
+  --text:#e5e7eb;
+  --soft:#cbd5e1;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:var(--bg);color:#fff}
-.app{max-width:420px;margin:auto;min-height:100vh;display:flex;flex-direction:column}
-header{text-align:center;padding:25px}
-header h1{color:var(--primary)}
-header p{font-size:.9rem;opacity:.9}
-main{flex:1;padding:20px}
-.card{background:var(--card);padding:20px;border-radius:18px;margin-bottom:15px}
-.card h2{color:var(--primary)}
-.card p{font-size:.9rem;opacity:.9;margin-top:5px}
-.btn{display:block;background:var(--primary);color:#0c1a2b;
-text-align:center;padding:14px;border-radius:30px;
-text-decoration:none;font-weight:600;margin-top:15px}
-.menu{display:flex;justify-content:space-around;background:#081221;padding:10px}
-.menu button{background:none;border:none;color:#fff;font-size:.75rem}
-.menu button.active{color:var(--primary)}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:white;
+}
+
+.app{
+  max-width:420px;
+  margin:auto;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+header{
+  padding:30px 20px;
+  text-align:center;
+}
+
+header h1{
+  color:var(--primary);
+  font-size:2.3rem;
+  font-weight:700;
+}
+
+header p{
+  color:var(--soft);
+  font-size:0.95rem;
+  margin-top:6px;
+}
+
+main{
+  flex:1;
+  padding:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,#1e293b,#0f172a);
+  padding:22px;
+  border-radius:22px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.card h2{
+  color:var(--primary);
+  font-size:1.15rem;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:0.9rem;
+  color:var(--text);
+  line-height:1.6;
+}
+
+.btn{
+  display:block;
+  background:linear-gradient(135deg,var(--primary),#ffd5e1);
+  color:#0f172a;
+  text-align:center;
+  padding:14px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:14px;
+}
+
+.btn.alt{
+  background:transparent;
+  border:1px solid var(--primary);
+  color:var(--primary);
+}
+
 section{display:none}
 section.active{display:block}
+
+.menu{
+  display:flex;
+  justify-content:space-around;
+  background:#020617;
+  padding:12px 0;
+  border-top:1px solid #1e293b;
+}
+
+.menu button{
+  background:none;
+  border:none;
+  color:var(--soft);
+  font-size:0.75rem;
+}
+
+.menu button.active{
+  color:var(--primary);
+}
+
+iframe{
+  width:100%;
+  height:260px;
+  border:0;
+  border-radius:18px;
+  margin-top:12px;
+}
 </style>
 </head>
 
 <body>
+
 <div class="app">
 
 <header>
   <h1>Mon Chèrie</h1>
-  <p>Boutique • Creche • Banho & Tosa</p>
+  <p>Amor, cuidado e sofisticação para o seu pet</p>
 </header>
 
 <main>
+
 <section id="home" class="active">
   <div class="card">
-    <h2>Bem-vindo 🐾</h2>
-    <p>Cuidado, amor e sofisticação para o seu pet.</p>
+    <h2>🐾 Sobre a Mon Chèrie</h2>
+    <p>
+      Uma boutique pet pensada para oferecer conforto, carinho e excelência.
+      Aqui, cada pet recebe atenção individual e muito amor.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>📸 Instagram</h2>
+    <p>Acompanhe nossa rotina e novidades.</p>
+    <a class="btn alt" href="https://instagram.com/mon.cherieboutique" target="_blank">
+      @mon.cherieboutique
+    </a>
   </div>
 </section>
 
 <section id="servicos">
   <div class="card">
-    <h2>Banho & Tosa</h2>
-    <a class="btn" href="https://wa.me/5511992301973">Agendar</a>
+    <h2>🛁 Banho & Tosa Premium</h2>
+    <p>Higiene, estética e bem-estar com produtos de alta qualidade.</p>
+    <a class="btn" href="https://wa.me/5511992301973">
+      Agendar no WhatsApp
+    </a>
   </div>
+
   <div class="card">
-    <h2>Creche Pet</h2>
-    <p>Socialização e diversão o dia todo.</p>
-  </div>
-  <div class="card">
-    <h2>Hotel Pet</h2>
-    <p>Hospedagem confortável e segura.</p>
+    <h2>🏡 Creche & Hotel Pet</h2>
+    <p>
+      Socialização, recreação monitorada e hospedagem confortável
+      em ambiente seguro.
+    </p>
   </div>
 </section>
 
 <section id="contato">
   <div class="card">
-    <h2>Contato</h2>
-    <a class="btn" href="https://wa.me/5511992301973">WhatsApp</a>
+    <h2>📍 Nossa Localização</h2>
+    <p>Rua Solidônio, 820</p>
+
+    <!-- GOOGLE MAPS ATUALIZADO -->
+    <iframe
+      src="https://www.google.com/maps?q=Rua%20Solid%C3%B4nio%20820&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <a class="btn" href="https://wa.me/5511992301973">
+      WhatsApp: (11) 99230-1973
+    </a>
   </div>
 </section>
+
 </main>
 
 <nav class="menu">
-  <button class="active" onclick="show('home',this)">Home</button>
-  <button onclick="show('servicos',this)">Serviços</button>
-  <button onclick="show('contato',this)">Contato</button>
+  <button class="active" onclick="mostrar('home',this)">Início</button>
+  <button onclick="mostrar('servicos',this)">Serviços</button>
+  <button onclick="mostrar('contato',this)">Localização</button>
 </nav>
 
 </div>
 
 <script>
-function show(id,btn){
- document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
- btn.classList.add('active');
-}
-
-if ('serviceWorker' in navigator) {
- navigator.serviceWorker.register('service-worker.js');
+function mostrar(id,btn){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
 }
 </script>
+
 </body>
 </html>
+
