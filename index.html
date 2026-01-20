@@ -5,18 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Chèrie | Boutique & Creche Pet</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#f7b7c8">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#0f172a;
-  --card:#1e293b;
   --primary:#f7b7c8;
   --text:#e5e7eb;
   --soft:#cbd5e1;
+  --lux1:#f7b7c8;
+  --lux2:#e8a1b8;
+  --lux3:#d4af37;
 }
 
 *{
@@ -40,19 +39,18 @@ body{
 }
 
 header{
-  padding:28px 20px;
   text-align:center;
+  padding:26px 20px;
 }
 
 header h1{
   color:var(--primary);
-  font-size:2.3rem;
-  font-weight:700;
+  font-size:2.2rem;
 }
 
 header p{
   color:var(--soft);
-  font-size:0.95rem;
+  font-size:.9rem;
   margin-top:6px;
 }
 
@@ -66,63 +64,73 @@ main{
   padding:22px;
   border-radius:22px;
   margin-bottom:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .card h2{
   color:var(--primary);
-  font-size:1.15rem;
+  font-size:1.1rem;
   margin-bottom:8px;
 }
 
 .card p{
-  font-size:0.9rem;
+  font-size:.9rem;
   color:var(--text);
   line-height:1.6;
 }
 
+/* BOTÕES AJUSTADOS */
 .btn{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  background:#25D366;
-  color:#0f172a;
   text-align:center;
-  padding:14px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
+  width:100%;
+  min-height:52px;
+  padding:12px 14px;
   margin-top:14px;
+
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  font-size:.9rem;
+
+  color:#fff;
+  background:linear-gradient(135deg,var(--lux1),var(--lux2),var(--lux3));
+  cursor:pointer;
+
+  white-space:normal;
+  word-break:break-word;
 }
 
 .btn.instagram{
-  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
-  color:white;
+  background:linear-gradient(135deg,#833ab4,#c13584,#fd1d1d);
 }
 
+/* SEÇÕES */
 section{display:none}
 section.active{display:block}
 
+/* MENU */
 .menu{
   display:flex;
   justify-content:space-around;
   background:#020617;
   padding:12px 0;
-  border-top:1px solid #1e293b;
 }
 
 .menu button{
   background:none;
   border:none;
   color:var(--soft);
-  font-size:0.75rem;
+  font-size:.75rem;
+  cursor:pointer;
 }
 
 .menu button.active{
   color:var(--primary);
 }
 
+/* MAPA */
 iframe{
   width:100%;
   height:220px;
@@ -130,11 +138,52 @@ iframe{
   border-radius:18px;
   margin-top:12px;
 }
+
+/* FORM */
+label{
+  display:block;
+  font-size:.8rem;
+  color:var(--soft);
+  margin:10px 0 6px;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  border-radius:14px;
+  border:none;
+  background:#0b1224;
+  color:var(--text);
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.infoBox{
+  margin-top:12px;
+  padding:12px;
+  border-radius:16px;
+  background:rgba(247,183,200,.08);
+}
+
+.infoLine{
+  display:flex;
+  justify-content:space-between;
+  font-size:.9rem;
+}
+
+.mini{
+  font-size:.75rem;
+  color:var(--soft);
+  margin-top:10px;
+}
 </style>
 </head>
 
 <body>
-
 <div class="app">
 
 <header>
@@ -146,86 +195,115 @@ iframe{
 
 <!-- INÍCIO -->
 <section id="home" class="active">
-
-  <!-- SOBRE -->
   <div class="card">
     <h2>🐾 Sobre a Mon Chèrie</h2>
-    <p>
-      Boutique pet especializada em bem-estar, estética e hospedagem.
-      Cada pet recebe cuidado individual, carinho e segurança.
-    </p>
+    <p>Boutique pet especializada em bem-estar, estética e hospedagem.</p>
   </div>
 
-  <!-- INSTAGRAM -->
   <div class="card">
     <h2>📸 Instagram</h2>
-    <p>Siga nosso dia a dia, novidades e cuidados especiais.</p>
-
-    <a class="btn instagram"
-       href="https://www.instagram.com/mon.cherieboutique/"
-       target="_blank">
+    <a class="btn instagram" href="https://www.instagram.com/mon.cherieboutique/" target="_blank">
       @mon.cherieboutique
     </a>
   </div>
 
-  <!-- LOCALIZAÇÃO -->
   <div class="card">
     <h2>📍 Onde Estamos</h2>
     <p>Rua Solidônio, 820</p>
-
-    <iframe
-      src="https://www.google.com/maps?q=Rua%20Solid%C3%B4nio%20820&output=embed"
-      loading="lazy">
-    </iframe>
-
-    <a class="btn"
-       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20localização%20da%20Mon%20Chèrie."
-       target="_blank">
-      WhatsApp
+    <iframe src="https://www.google.com/maps?q=Rua%20Solid%C3%B4nio%20820&output=embed"></iframe>
+    <a class="btn" href="https://wa.me/5511992301973" target="_blank">
+      WhatsApp • 11 99230-1973
     </a>
   </div>
-
 </section>
 
 <!-- SERVIÇOS -->
 <section id="servicos">
-
   <div class="card">
     <h2>🛁 Banho & Tosa Premium</h2>
-    <p>Higiene, estética e conforto com produtos de alto padrão.</p>
-    <a class="btn"
-       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20e%20Tosa%20Premium%20para%20meu%20pet."
-       target="_blank">
-      WhatsApp
+    <a class="btn" href="https://wa.me/5511992301973" target="_blank">
+      Agendar Banho & Tosa
     </a>
   </div>
 
   <div class="card">
     <h2>🏡 Creche Pet</h2>
-    <p>
-      Socialização, recreação monitorada e muito carinho durante o dia
-      em um ambiente seguro.
-    </p>
-    <a class="btn"
-       href="https://wa.me/5511992301973?text=Olá!%20Tenho%20interesse%20na%20Creche%20Pet%20da%20Mon%20Chèrie."
-       target="_blank">
-      WhatsApp
+    <a class="btn" href="https://wa.me/5511992301973" target="_blank">
+      Falar sobre Creche Pet
     </a>
   </div>
 
   <div class="card">
     <h2>🚕 Taxi Dog</h2>
-    <p>
-      Transporte seguro e confortável.<br>
-      <strong>10 km: R$ 60,00 | 20 km: R$ 110,00</strong>
-    </p>
-    <a class="btn"
-       href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20solicitar%20o%20Taxi%20Dog%20da%20Mon%20Chèrie.%20Valores:%2010km%20R$60,00%20e%2020km%20R$110,00."
-       target="_blank">
-      WhatsApp
+    <p><strong>10 km: R$ 60 | 20 km: R$ 110</strong></p>
+    <a class="btn" href="https://wa.me/5511992301973" target="_blank">
+      Solicitar Taxi Dog
     </a>
   </div>
+</section>
 
+<!-- AGENDAMENTO -->
+<section id="agendamento">
+  <div class="card">
+    <h2>📅 Agendamento Automático</h2>
+
+    <form>
+      <label>Nome do responsável</label>
+      <input id="responsavel" required>
+
+      <label>Nome do pet</label>
+      <input id="pet" required>
+
+      <div class="row">
+        <div>
+          <label>Porte</label>
+          <select id="porte" required>
+            <option value="">Selecione</option>
+            <option value="pequeno">Pequeno</option>
+            <option value="grande">Grande</option>
+          </select>
+        </div>
+        <div>
+          <label>Serviço</label>
+          <select id="servico" required>
+            <option value="">Selecione</option>
+            <option value="banho">Só Banho</option>
+            <option value="banho_tosa">Banho e Tosa</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Data</label>
+          <input id="data" type="date" required>
+        </div>
+        <div>
+          <label>Horário</label>
+          <select id="inicio" required></select>
+        </div>
+      </div>
+
+      <label>🚕 Precisa de Taxi Dog?</label>
+      <select id="taxidog">
+        <option value="Não">Não</option>
+        <option value="Sim">Sim</option>
+      </select>
+
+      <div class="infoBox">
+        <div class="infoLine"><span>Duração</span><strong id="duracaoTxt">—</strong></div>
+        <div class="infoLine"><span>Término</span><strong id="fimTxt">—</strong></div>
+      </div>
+
+      <button class="btn" type="button" id="btnWhats">
+        Enviar Agendamento pelo WhatsApp
+      </button>
+
+      <p class="mini">
+        Pequeno banho 40min | Grande banho 1h | Pequeno banho+tosa 1h10 | Grande banho+tosa 2h20
+      </p>
+    </form>
+  </div>
 </section>
 
 </main>
@@ -233,6 +311,7 @@ iframe{
 <nav class="menu">
   <button class="active" onclick="mostrar('home',this)">Início</button>
   <button onclick="mostrar('servicos',this)">Serviços</button>
+  <button onclick="mostrar('agendamento',this)">Agendamento</button>
 </nav>
 
 </div>
@@ -245,9 +324,51 @@ function mostrar(id,btn){
   btn.classList.add('active');
 }
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+/* horários 08:00–18:00 */
+const inicioSel=document.getElementById("inicio");
+for(let m=480;m<=1080;m+=10){
+  const h=String(Math.floor(m/60)).padStart(2,"0");
+  const mi=String(m%60).padStart(2,"0");
+  inicioSel.innerHTML+=`<option value="${h}:${mi}">${h}:${mi}</option>`;
 }
+
+/* duração */
+const DUR={
+  pequeno:{banho:40,banho_tosa:70},
+  grande:{banho:60,banho_tosa:140}
+};
+
+function calc(){
+  if(!porte.value||!servico.value||!inicio.value) return;
+  const min=DUR[porte.value][servico.value];
+  duracaoTxt.textContent=min>=60?`${Math.floor(min/60)}h ${min%60||""}`:`${min} min`;
+  const [h,m]=inicio.value.split(":").map(Number);
+  const t=h*60+m+min;
+  fimTxt.textContent=`${String(Math.floor(t/60)%24).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`;
+}
+
+["change","input"].forEach(e=>{
+  porte.addEventListener(e,calc);
+  servico.addEventListener(e,calc);
+  inicio.addEventListener(e,calc);
+});
+
+btnWhats.onclick=()=>{
+  const msg=
+`Olá! 😊
+Você pode confirmar se o horário abaixo está disponível?
+
+Responsável: ${responsavel.value}
+Pet: ${pet.value}
+Serviço: ${servico.options[servico.selectedIndex].text}
+Porte: ${porte.options[porte.selectedIndex].text}
+Data: ${data.value}
+Início: ${inicio.value}
+Término previsto: ${fimTxt.textContent}
+Taxi Dog: ${taxidog.value}`;
+
+  window.open("https://wa.me/5511992301973?text="+encodeURIComponent(msg));
+};
 </script>
 
 </body>
