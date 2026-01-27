@@ -43,6 +43,7 @@ body{
   flex-direction:column;
 }
 
+/* HEADER */
 header{
   text-align:center;
   padding:26px 20px 14px;
@@ -59,7 +60,12 @@ header p{
   margin-top:6px;
 }
 
-main{flex:1;padding:20px}
+/* MAIN */
+main{
+  flex:1;
+  padding:20px;
+  padding-bottom:110px; /* espaço para menu flutuante */
+}
 
 /* CARDS */
 .card{
@@ -70,22 +76,14 @@ main{flex:1;padding:20px}
   margin-bottom:18px;
 }
 
-.card h2{
-  font-size:1.1rem;
-  margin-bottom:8px;
-}
-.card p{
-  font-size:.9rem;
-  color:var(--soft);
-  line-height:1.6;
-}
+.card h2{font-size:1.1rem;margin-bottom:8px}
+.card p{font-size:.9rem;color:var(--soft);line-height:1.6}
 
 /* BOTÕES */
 .btn{
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   width:100%;
   min-height:54px;
   padding:12px 16px;
@@ -99,52 +97,54 @@ main{flex:1;padding:20px}
   cursor:pointer;
   text-decoration:none;
 }
-
-.btn.instagram{
-  color:#fff;
-  background:linear-gradient(135deg,var(--teal),var(--navy),var(--rose));
-}
-
-.btn.maps{
-  color:#fff;
-  background:linear-gradient(135deg,var(--teal),var(--pink),var(--gold));
-}
-
-.btn.whats{
-  color:#fff;
-  background:linear-gradient(135deg,var(--navy),var(--rose),var(--gold));
-}
+.btn.instagram{color:#fff;background:linear-gradient(135deg,var(--teal),var(--navy),var(--rose))}
+.btn.maps{color:#fff;background:linear-gradient(135deg,var(--teal),var(--pink),var(--gold))}
+.btn.whats{color:#fff;background:linear-gradient(135deg,var(--navy),var(--rose),var(--gold))}
 
 /* SEÇÕES */
 section{display:none}
 section.active{display:block}
 
-/* MENU */
-.menu{
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  background:#04060a;
-  border-top:1px solid rgba(255,182,201,.2);
-  padding:14px 10px env(safe-area-inset-bottom);
+/* FORM */
+label{display:block;font-size:.8rem;color:var(--soft);margin:10px 0 6px}
+input,select{
+  width:100%;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(255,182,201,.18);
+  background:#0b1224;
+  color:#ffffff;
 }
+select option{background:#0f1c2a;color:#ffffff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-.menu button{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:44px;
-  padding:10px 16px;
-  border-radius:18px;
-  background:none;
-  border:1px solid rgba(255,182,201,.25);
-  color:var(--muted);
-  font-size:.78rem;
-  cursor:pointer;
+.infoBox{
+  margin-top:12px;
+  padding:14px;
+  border-radius:16px;
+  background:linear-gradient(135deg, rgba(22,199,195,.14), rgba(255,111,145,.12));
 }
-.menu button.active{
-  color:#fff;
-  border-color:var(--rose);
+.infoLine{display:flex;justify-content:space-between;font-size:.95rem}
+
+/* OBS TAXI DOG */
+.taxi-obs{
+  margin-top:8px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(246,195,91,.25);
+  background:linear-gradient(135deg, rgba(246,195,91,.10), rgba(255,111,145,.06));
+  color:var(--gold);
+  font-size:.78rem;
+  opacity:0;
+  transform:translateY(-6px);
+  max-height:0;
+  overflow:hidden;
+  transition:.25s ease;
+}
+.taxi-obs.show{
+  opacity:1;
+  transform:translateY(0);
+  max-height:80px;
 }
 
 /* MAPA */
@@ -156,51 +156,45 @@ iframe{
   margin-top:12px;
 }
 
-/* FORM */
-label{
-  display:block;
-  font-size:.8rem;
-  color:var(--soft);
-  margin:10px 0 6px;
-}
+/* MENU FLUTUANTE */
+.menu{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  width:calc(100% - 32px);
+  max-width:420px;
 
-input,select{
-  width:100%;
-  padding:12px;
-  border-radius:14px;
-  border:1px solid rgba(255,182,201,.18);
-  background:#0b1224;
-  color:#ffffff;
-}
-
-select option{
-  background:#0f1c2a;
-  color:#ffffff;
-}
-
-.row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.infoBox{
-  margin-top:12px;
-  padding:12px;
-  border-radius:16px;
-  background:linear-gradient(135deg, rgba(22,199,195,.14), rgba(255,111,145,.12));
-}
-
-.infoLine{
   display:flex;
   justify-content:space-between;
-  font-size:.9rem;
+  gap:10px;
+
+  padding:12px;
+  border-radius:22px;
+
+  background:rgba(4,6,10,.85);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,182,201,.25);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
 }
 
-.mini{
-  font-size:.75rem;
+.menu button{
+  flex:1;
+  height:46px;
+  border-radius:16px;
+  background:none;
+  border:1px solid rgba(255,182,201,.25);
   color:var(--muted);
-  margin-top:10px;
+  font-size:.78rem;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.menu button.active{
+  color:#fff;
+  border-color:var(--rose);
+  background:linear-gradient(135deg, rgba(255,182,201,.25), rgba(255,111,145,.18));
+  box-shadow:0 0 20px rgba(255,111,145,.25);
 }
 </style>
 </head>
@@ -215,9 +209,7 @@ select option{
 
 <main>
 
-<!-- INÍCIO -->
 <section id="home" class="active">
-
   <div class="card">
     <h2>🐾 Sobre a Mon Chèrie</h2>
     <p>Boutique pet especializada em bem-estar, estética e hospedagem.</p>
@@ -225,9 +217,7 @@ select option{
 
   <div class="card">
     <h2>📸 Instagram</h2>
-    <a class="btn instagram"
-       href="https://www.instagram.com/mon.cherieboutique/"
-       target="_blank">
+    <a class="btn instagram" href="https://www.instagram.com/mon.cherieboutique/" target="_blank">
       @mon.cherieboutique
     </a>
   </div>
@@ -235,56 +225,38 @@ select option{
   <div class="card">
     <h2>📍 Onde Estamos</h2>
     <p>Rua Cambembé, 68 - Tatuapé</p>
-
-    <iframe
-      src="https://www.google.com/maps?q=Rua+Cambemb%C3%A9,+68+-+Tatuap%C3%A9&output=embed">
-    </iframe>
-
-    <a class="btn maps"
-       href="https://www.google.com/maps/search/?api=1&query=Rua+Cambemb%C3%A9,+68+-+Tatuap%C3%A9"
-       target="_blank">
+    <iframe src="https://www.google.com/maps?q=Rua+Cambemb%C3%A9,+68+-+Tatuap%C3%A9&output=embed"></iframe>
+    <a class="btn maps" href="https://www.google.com/maps/search/?api=1&query=Rua+Cambemb%C3%A9,+68+-+Tatuap%C3%A9" target="_blank">
       Abrir no Google Maps
     </a>
   </div>
-
 </section>
 
-<!-- SERVIÇOS -->
 <section id="servicos">
-
   <div class="card">
     <h2>🛁 Banho & Tosa Premium</h2>
-    <a class="btn"
-       href="https://wa.me/5511992301973"
-       target="_blank">
-      Agendar
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20agendar%20Banho%20ou%20Banho%20e%20Tosa%20para%20meu%20pet." target="_blank">
+      Agendar Banho & Tosa
     </a>
   </div>
 
   <div class="card">
     <h2>🏡 Creche Pet</h2>
-    <a class="btn"
-       href="https://wa.me/5511992301973"
-       target="_blank">
-      Falar no WhatsApp
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20Creche%20Pet." target="_blank">
+      Informações Creche
     </a>
   </div>
 
   <div class="card">
     <h2>🚕 Taxi Dog</h2>
     <p><strong>10 km: R$ 60 | 20 km: R$ 110</strong></p>
-    <a class="btn"
-       href="https://wa.me/5511992301973"
-       target="_blank">
+    <a class="btn" href="https://wa.me/5511992301973?text=Olá!%20Gostaria%20de%20solicitar%20o%20serviço%20de%20Taxi%20Dog." target="_blank">
       Solicitar Taxi Dog
     </a>
   </div>
-
 </section>
 
-<!-- AGENDAMENTO -->
 <section id="agendamento">
-
   <div class="card">
     <h2>📅 Agendamento Automático</h2>
 
@@ -297,17 +269,18 @@ select option{
     <div class="row">
       <div>
         <label>Porte</label>
-        <select>
-          <option>Pequeno</option>
-          <option>Grande</option>
+        <select id="porte">
+          <option value="">Selecione</option>
+          <option value="pequeno">Pequeno</option>
+          <option value="grande">Grande</option>
         </select>
       </div>
       <div>
         <label>Serviço</label>
-        <select>
-          <option>Selecione</option>
-          <option>Só Banho</option>
-          <option>Banho e Tosa</option>
+        <select id="servico">
+          <option value="">Selecione</option>
+          <option value="banho">Só Banho</option>
+          <option value="banho_tosa">Banho e Tosa</option>
         </select>
       </div>
     </div>
@@ -315,44 +288,31 @@ select option{
     <div class="row">
       <div>
         <label>Data</label>
-        <input type="date">
+        <input id="data" type="date">
       </div>
       <div>
-        <label>Horário (08h–18h)</label>
-        <select>
-          <option>08:00</option>
-          <option>09:00</option>
-          <option>10:00</option>
-          <option>11:00</option>
-          <option>13:00</option>
-          <option>14:00</option>
-          <option>15:00</option>
-          <option>16:00</option>
-          <option>17:00</option>
-          <option>18:00</option>
-        </select>
+        <label>Horário</label>
+        <select id="inicio"></select>
       </div>
     </div>
 
     <label>🚕 Precisa de Taxi Dog?</label>
-    <select>
-      <option>Não</option>
-      <option>Sim</option>
+    <select id="taxidog">
+      <option value="Não">Não</option>
+      <option value="Sim">Sim</option>
     </select>
 
-    <div class="infoBox">
-      <div class="infoLine"><span>Duração</span><strong>—</strong></div>
-      <div class="infoLine"><span>Término previsto</span><strong>—</strong></div>
+    <div id="obsTaxi" class="taxi-obs">
+      💡 Taxi Dog: até 10 km – R$ 60 | até 20 km – R$ 110
     </div>
 
-    <button class="btn whats">Enviar agendamento</button>
+    <div class="infoBox">
+      <div class="infoLine"><span>Duração</span><strong id="duracaoTxt">—</strong></div>
+      <div class="infoLine"><span>Término</span><strong id="fimTxt">—</strong></div>
+    </div>
 
-    <p class="mini">
-      Regras: pequeno banho 40min | grande banho 1h | pequeno banho+tosa 1h10 | grande banho+tosa 2h20
-    </p>
-
+    <button class="btn whats" id="btnWhats">Enviar agendamento</button>
   </div>
-
 </section>
 
 </main>
@@ -372,6 +332,47 @@ function mostrar(id,btn){
   document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
 }
+
+/* horários */
+const inicio=document.getElementById("inicio");
+for(let m=480;m<=1080;m+=10){
+  const h=String(Math.floor(m/60)).padStart(2,"0");
+  const mi=String(m%60).padStart(2,"0");
+  inicio.innerHTML+=`<option>${h}:${mi}</option>`;
+}
+
+/* cálculo */
+const DUR={pequeno:{banho:40,banho_tosa:70},grande:{banho:60,banho_tosa:140}};
+function calc(){
+  if(!porte.value||!servico.value||!inicio.value)return;
+  const min=DUR[porte.value][servico.value];
+  duracaoTxt.textContent=min<60?`${min}min`:`${Math.floor(min/60)}h ${min%60}min`;
+  const [h,m]=inicio.value.split(":").map(Number);
+  const end=h*60+m+min;
+  fimTxt.textContent=`${String(Math.floor(end/60)).padStart(2,"0")}:${String(end%60).padStart(2,"0")}`;
+}
+porte.onchange=servico.onchange=inicio.onchange=calc;
+
+/* taxi obs */
+taxidog.onchange=()=>obsTaxi.classList.toggle("show",taxidog.value==="Sim");
+
+/* whatsapp */
+btnWhats.onclick=()=>{
+  if(!responsavel.value||!pet.value||!data.value||!inicio.value){alert("Preencha tudo");return;}
+  calc();
+  const msg=`Olá! 😊
+Agendamento:
+Responsável: ${responsavel.value}
+Pet: ${pet.value}
+Serviço: ${servico.options[servico.selectedIndex].text}
+Porte: ${porte.options[porte.selectedIndex].text}
+Data: ${data.value}
+Horário: ${inicio.value}
+Duração: ${duracaoTxt.textContent}
+Término: ${fimTxt.textContent}
+Taxi Dog: ${taxidog.value}`;
+  window.open("https://wa.me/5511992301973?text="+encodeURIComponent(msg));
+};
 </script>
 
 </body>
